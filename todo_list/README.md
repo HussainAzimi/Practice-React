@@ -1,5 +1,5 @@
 ## A bout Todo List APP
-The main objective of creating this App is practice with React.js
+The main objective of creating this App is to practice with React.js
 
 ## Learning objectives
 1. Create a simple Todo List application using React and add headings and     associated lists to organize tasks.
