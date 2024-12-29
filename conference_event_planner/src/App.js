@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import ConferenceEvent from "./ConferenceEvent";
+import AboutUs from "./AboutUs";
+
 
 function App() {
+  const [showVenue, setShowVenue] = useState(false);
+
+  const handleGetStarted = () => {
+    setShowVenue(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="first_page">
+        <div className="main_event">
+          <div className="first_page_name_btn">
+            <h1 className="budget_heading">Conference Expense Planner</h1>
+            <p className="budget_sentence"> Plan your next major event with us!</p>
+            <div className="getstarted_btn">
+              <button onClick={() => handleGetStarted()} className="get-started-btn">
+                Get Started
+              </button>
+            </div>
+          </div>
+          <div className="aboutus_main">
+            <AboutUs />
+          </div>
+        </div>
       </header>
-    </div>
+
+      <div className={`event-list-container ${showVenue ? 'visible' : ''}`}>
+        <ConferenceEvent />
+      </div>
+    </>
   );
 }
 
